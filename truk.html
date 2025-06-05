@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bạn có thư nè</title>
+</head>
+<body class="truk-bg">
+    <div class="envelope-container">
+        <div class="envelope">
+            <div class="envelope__tab"></div>
+          <div class="envelope__letter">
+                <p>Giữa thế giới bao la, anh chỉ cần em. 💫 Em là ánh sáng dẫn lối trái tim anh, là niềm vui trong từng hơi thở của anh. 💖</p>
+            </div>
+          <div class="envelope--base"></div> 
+        </div>
+    </div>
+
+    <div class="truck-container">
+        <div class="container">
+            <div class="ts">
+            <div class="box"></div>
+            <div class="front">
+                <div class="light"></div>
+                <div class="trapezoid"></div>
+                <div class="pipe"></div>
+                <div class="pipe2"></div>
+                <img class="img1" src="https://i.gifer.com/5zoP.gif">
+                <img class="img2" src="https://i.gifer.com/5zoP.gif">
+                <img class="img3" src="https://i.gifer.com/5zoP.gif">
+                <img class="img4" src="https://i.gifer.com/5zoP.gif">
+                <img class="img5" src="https://i.gifer.com/5zoP.gif">
+                <img class="img6" src="https://i.gifer.com/5zoP.gif">
+                <img class="img7" src="https://i.gifer.com/5zoP.gif">
+                <img class="img8" src="https://i.gifer.com/5zoP.gif">
+                <img class="img9" src="https://i.gifer.com/5zoP.gif">
+                <img class="img10" src="https://i.gifer.com/5zoP.gif">
+                <img class="img11" src="https://i.gifer.com/5zoP.gif">
+                <div class="front1"></div>
+                <div class="front2"></div>
+                <div class="window"></div>
+                 <div class="hood"></div>    
+            </div>
+             <div class="tyre1">
+                <div class="r1"></div>
+                <div class="r2"></div>
+                <div class="r3"></div>
+                <div class="r4"></div>
+                <div class="r5"></div>
+                <div class="r6"></div>
+             </div>
+             <div class="tyre2">
+                <div class="r1"></div>
+                <div class="r2"></div>
+                <div class="r3"></div>
+                <div class="r4"></div>
+                <div class="r5"></div>
+                <div class="r6"></div>
+             </div>
+             <div class="tyre3">
+                <div class="r1"></div>
+                <div class="r2"></div>
+                <div class="r3"></div>
+                <div class="r4"></div>
+                <div class="r5"></div>
+                <div class="r6"></div>
+             </div>
+             <div class="tyre4">
+                <div class="r1"></div>
+                <div class="r2"></div>
+                <div class="r3"></div>
+                <div class="r4"></div>
+                <div class="r5"></div>
+                <div class="r6"></div>
+             </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center;margin-top:30px;">
+        <h2 style="color:#ff6a88;text-shadow:0 0 10px #fff;font-family:'Segoe Script',cursive;animation:fadeIn 2s;">Gửi em, người anh thương nhất 💌</h2>
+    </div>
+    <div id="floating-hearts"></div>
+    <audio id="truck-audio" src="double-car-horn-352443.mp3" preload="auto"></audio>
+    <script>
+function spawnFloatingHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'floating-heart';
+  heart.innerHTML = '💖';
+  heart.style.left = (Math.random() * 90 + 5) + 'vw';
+  heart.style.fontSize = (Math.random() * 1.5 + 1.5) + 'rem';
+  document.getElementById('floating-hearts').appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+setInterval(spawnFloatingHeart, 800);
+
+// Phát âm thanh khi trang mở (user interaction sẽ không bị chặn trên mobile)
+window.addEventListener('DOMContentLoaded', function() {
+  const audio = document.getElementById('truck-audio');
+  // Thử phát ngay khi trang tải xong (nếu trình duyệt cho phép)
+  audio.currentTime = 0;
+  audio.play().catch(() => {
+    // Nếu bị chặn, phát khi người dùng click bất kỳ đâu trên trang
+    const playAudioOnce = () => {
+      audio.currentTime = 0;
+      audio.play();
+      document.removeEventListener('click', playAudioOnce);
+    };
+    document.addEventListener('click', playAudioOnce);
+  });
+});
+</script>
+</body>
+</html>
